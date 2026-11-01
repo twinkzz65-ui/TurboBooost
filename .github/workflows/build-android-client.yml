@@ -1,0 +1,54 @@
+# Собирает APK клиента Telegram для Android (форк DrKLO/Telegram или другой).
+# Сам сервер Opengram APK не содержит, поэтому клиент берётся из отдельного репозитория.
+# Запуск: вкладка Actions -> Build Android client -> Run workflow.
+name: Build Android client
+
+on:
+  workflow_dispatch:
+    inputs:
+      client_repo:
+        description: "Репозиторий клиента (owner/name), например твой форк DrKLO/Telegram"
+        required: true
+        default: "DrKLO/Telegram"
+      client_ref:
+        description: "Ветка или тег"
+        required: true
+        default: "master"
+      gradle_task:
+        description: "Gradle-задача"
+        required: true
+        default: "assembleDebug"
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout client
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.client_repo }}
+          ref: ${{ inputs.client_ref }}
+          submodules: recursive
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install NDK/CMake
+        run: |
+          sdkmanager --install "ndk;21.4.7075529" "cmake;3.10.2.4988404" || true
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        run: |
+          chmod +x ./gradlew
+          ./gradlew ${{ inputs.gradle_task }} --no-daemon --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: "**/build/outputs/apk/**/*.apk"
