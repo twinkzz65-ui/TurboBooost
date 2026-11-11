@@ -1,0 +1,26 @@
+# Generated .NET files
+bin/
+obj/
+.vs/
+artifacts/
+dist/
+TestResults/
+# User databases and secrets
+.env
+.env.local
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+appsettings.Production.json
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+# Mobile (Capacitor) generated
+mobile/node_modules/
+mobile/www/
+mobile/android/
+mobile/ios/
+mobile/dist/

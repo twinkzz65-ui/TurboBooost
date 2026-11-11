@@ -1,0 +1,16 @@
+{
+  "appId": "app.godgram.messenger",
+  "appName": "GodGram",
+  "webDir": "www",
+  "backgroundColor": "#17212b",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "ios": {
+    "contentInset": "never"
+  }
+}
