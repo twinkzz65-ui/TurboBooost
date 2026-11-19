@@ -1,0 +1,51 @@
+/* ===== OPEX-LIST: экран «Чаты» по эталону (тёмная нейтральная тема, плоские карточки) ===== */
+#screen-list,#tabBar{--rg-bg:#181819;--bg:#181819;--bg2:#181819;--bg3:#232324;--text2:#8e8e93;--accent:#229af0;--badge:#229af0;--blue:#229af0}
+#screen-list,#screen-list .chat-list{background:#181819!important}
+#screen-list{font-family:Roboto,"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+#screen-list .header{background:#181819;height:56px;min-height:56px;padding:0 4px 0 10px;border:0;box-shadow:none}
+#screen-list .header-left{gap:10px!important;min-width:0}
+#screen-list .logo{font-size:21px;font-weight:600;color:#fff;letter-spacing:0}
+#screen-list .icon-btn{width:44px;height:44px;color:#fff}
+#screen-list .icon-btn svg{width:26px;height:26px}
+/* логотип в шапке */
+.ox-logo{display:flex;flex:none;line-height:0}
+.ox-logo svg{width:34px;height:34px}
+/* баннер «день рождения» */
+.ox-bd{display:flex;align-items:center;gap:8px;margin:4px 11px 6px;padding:10px 12px 10px 16px;border-radius:22px;background:#232324;cursor:pointer}
+.ox-bd .t{flex:1;min-width:0}.ox-bd b{display:block;white-space:nowrap;font-size:15.5px;font-weight:600;color:#fff;line-height:1.25}
+.ox-bd span{display:block;font-size:13.3px;color:#828282;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ox-bd .x{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#828282}
+/* строки чатов */
+#screen-list .chat-item{padding:7px 11px;gap:13px;min-height:70px;align-items:center;background:transparent}
+#screen-list .chat-item:active{background:#232324}
+#screen-list .avatar-wrap{width:52px;height:52px;flex:none}
+#screen-list .avatar-wrap .avatar-ph,#screen-list .avatar-wrap img.avatar{width:52px!important;height:52px!important;font-size:19px!important}
+#screen-list .online-dot{display:none!important}
+#screen-list .chat-name{font-size:17px;font-weight:500;color:#fff;letter-spacing:0}
+#screen-list .chat-top{margin-bottom:2px}
+#screen-list .chat-time{font-size:13.5px;color:#8e8e93!important;font-weight:400}
+#screen-list .chat-item.unm .chat-time{color:#4fb6ff!important}
+#screen-list .chat-msg{font-size:15.5px;color:#8e8e93!important;line-height:1.3}
+#screen-list .chat-item.unread .chat-preview,#screen-list .chat-item.unread .chat-msg{color:#8e8e93}
+#screen-list .chat-msg .you,#screen-list .chat-msg b{color:#d9d9db}
+#screen-list .unread-badge{min-width:22px;height:22px;padding:0 7px;border-radius:11px;background:#229af0;color:#fff;font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;line-height:1}
+#screen-list .unread-badge.muted{background:#454545;color:#fff}
+.ox-mute{display:inline-block;vertical-align:middle;margin-left:6px;color:#6b6b70}
+.ox-mute svg{width:16px;height:16px;display:block;fill:currentColor}
+/* кнопки действий */
+#screen-list .gx-fab{background:#229af0}
+#screen-list .gx-fab2{background:#232324!important;color:#fff;box-shadow:none}
+#screen-list .gx-fab{background:#229af0!important;box-shadow:0 3px 10px rgba(0,0,0,.4)}
+/* нижняя навигация: плоская тёмная пилюля */
+#tabBar{background:#1d1d1e!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:0!important;box-shadow:0 2px 14px rgba(0,0,0,.45)!important;height:62px!important;border-radius:31px!important;left:10px!important;right:10px!important}
+#tabBar::before{display:none!important}
+#tabBar .lg-lens{background:#232d36!important;border:0!important;box-shadow:none!important;border-radius:27px!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+#tabBar .nav-item{color:#fff;font-size:13px;font-weight:600}
+#tabBar .nav-item.active{color:#229af0}
+#tabBar .nav-badge{border-color:#232d36;background:#4fb6ff;color:#0e2233}
+#tabBar .nav-icon{width:27px!important;height:27px!important}
+#tabBar .nav-icon svg{width:27px!important;height:27px!important;flex:none!important}
+#tabBar .ic-off{stroke-width:1.7}
+#tabBar .nav-avatar{width:28px!important;height:28px!important}
+#tabBar .nav-item.active .ic-on{fill:currentColor!important;stroke:none!important}
+#tabBar .nav-item.active .ic-on *{fill:inherit}
