@@ -1,0 +1,6 @@
+android/
+.github/
+*.zip
+.git/
+
+telegram_src/

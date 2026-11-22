@@ -1,0 +1,154 @@
+Собрано pack_telegram.py из https://github.com/DrKLO/Telegram
+Части: gifts, profile (depth=1)
+
+Лицензия: GPLv2 (см. LICENSE). Название и логотип Telegram — товарные знаки.
+Файлы скопированы без изменений, пути сохранены как в репозитории.
+UI-классы ссылаются на R.* (ресурсы) и на messenger/tgnet, переносите их вместе.
+
+[gifts] не найдены в res (возможно, из другого модуля): drawable/photo_paint, raw/toast_error
+
+[gifts] ядро (40 файлов):
+  org/telegram/messenger/GiftAuctionController.java
+  org/telegram/messenger/wallpaper/WallpaperGiftBitmapDrawable.java
+  org/telegram/messenger/wallpaper/WallpaperGiftPatternPosition.java
+  org/telegram/ui/Cells/ActiveGiftAuctionsHintCell.java
+  org/telegram/ui/Components/Premium/GiftPremiumBottomSheet.java
+  org/telegram/ui/Components/Premium/PremiumGiftHeaderCell.java
+  org/telegram/ui/Components/Premium/PremiumGiftTierCell.java
+  org/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet.java
+  org/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet.java
+  org/telegram/ui/Components/Premium/boosts/PremiumPreviewGiftLinkBottomSheet.java
+  org/telegram/ui/Components/Premium/boosts/PremiumPreviewGiftSentBottomSheet.java
+  org/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter.java
+  org/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell.java
+  org/telegram/ui/Gifts/AcquiredGiftsSheet.java
+  org/telegram/ui/Gifts/ActiveAuctionsSheet.java
+  org/telegram/ui/Gifts/AuctionBidSheet.java
+  org/telegram/ui/Gifts/AuctionJoinSheet.java
+  org/telegram/ui/Gifts/AuctionWearingSheet.java
+  org/telegram/ui/Gifts/GiftMessageBottomSheet.java
+  org/telegram/ui/Gifts/GiftMessageDrawable.java
+  org/telegram/ui/Gifts/GiftMessageView.java
+  org/telegram/ui/Gifts/GiftSheet.java
+  org/telegram/ui/Gifts/ProfileGiftsContainer.java
+  org/telegram/ui/Gifts/ResaleGiftsFragment.java
+  org/telegram/ui/Gifts/SelectGiftsBottomSheet.java
+  org/telegram/ui/Gifts/SendGiftSheet.java
+  org/telegram/ui/Gifts/StarGiftUniqueActionView.java
+  org/telegram/ui/QrShare/QrGiftSymbol.java
+  org/telegram/ui/Stars/CraftGiftSheet.java
+  org/telegram/ui/Stars/GiftOfferSheet.java
+  org/telegram/ui/Stars/ProfileGiftsView.java
+  org/telegram/ui/Stars/SellGiftEnterPriceSheet.java
+  org/telegram/ui/Stars/StarGiftPatterns.java
+  org/telegram/ui/Stars/StarGiftPreviewSheet.java
+  org/telegram/ui/Stars/StarGiftSheet.java
+  org/telegram/ui/Stars/StarGiftUniqueActionLayout.java
+  org/telegram/ui/Wallet/CollectibleCell.java
+  org/telegram/ui/Wallet/WalletGiftCell.java
+  org/telegram/ui/Wallet/WalletGiftPalette.java
+  org/telegram/ui/Wallet/WalletGiftStickers.java
+
+[profile] не найдены в res (возможно, из другого модуля): drawable/googleg_standard_color_18, drawable/msg_signed, drawable/photo_paint, raw/mapstyle_dark, raw/toast_error
+
+[profile] ядро (100 файлов):
+  org/telegram/messenger/ChatThemeController.java
+  org/telegram/messenger/NotificationsSettingsFacade.java
+  org/telegram/messenger/SaveToGallerySettingsHelper.java
+  org/telegram/messenger/wallpaper/WallpaperBitmapHolder.java
+  org/telegram/messenger/wallpaper/WallpaperGiftBitmapDrawable.java
+  org/telegram/messenger/wallpaper/WallpaperGiftPatternPosition.java
+  org/telegram/ui/ActionBar/EmojiThemes.java
+  org/telegram/ui/ActionBar/Theme.java
+  org/telegram/ui/ActionBar/ThemeBind.java
+  org/telegram/ui/ActionBar/ThemeColors.java
+  org/telegram/ui/ActionBar/ThemeDescription.java
+  org/telegram/ui/ActionBar/theme/ITheme.java
+  org/telegram/ui/ActionBar/theme/ThemeKey.java
+  org/telegram/ui/ArchiveSettingsActivity.java
+  org/telegram/ui/AudioRecorderSettingsActivity.java
+  org/telegram/ui/BlurSettingsBottomSheet.java
+  org/telegram/ui/Business/ProfileHoursCell.java
+  org/telegram/ui/Business/ProfileLocationCell.java
+  org/telegram/ui/Cells/EditTextSettingsCell.java
+  org/telegram/ui/Cells/ProfileChannelCell.java
+  org/telegram/ui/Cells/ProfileSearchCell.java
+  org/telegram/ui/Cells/SettingsSearchCell.java
+  org/telegram/ui/Cells/SettingsSuggestionCell.java
+  org/telegram/ui/Cells/TextColorThemeCell.java
+  org/telegram/ui/Cells/TextDetailSettingsCell.java
+  org/telegram/ui/Cells/TextInfoPrivacyCell.java
+  org/telegram/ui/Cells/TextSettingsCell.java
+  org/telegram/ui/Cells/ThemeCell.java
+  org/telegram/ui/Cells/ThemePreviewMessagesCell.java
+  org/telegram/ui/Cells/ThemeTypeCell.java
+  org/telegram/ui/Cells/ThemesHorizontalListCell.java
+  org/telegram/ui/Cells/WallpaperCell.java
+  org/telegram/ui/ChangeBioActivity.java
+  org/telegram/ui/ChangeNameActivity.java
+  org/telegram/ui/ChangeUsernameActivity.java
+  org/telegram/ui/ChannelWallpaperActivity.java
+  org/telegram/ui/Components/AvatarConstructorFragment.java
+  org/telegram/ui/Components/AvatarConstructorPreviewCell.java
+  org/telegram/ui/Components/ChatThemeBottomSheet.java
+  org/telegram/ui/Components/JoinToSendSettingsView.java
+  org/telegram/ui/Components/Premium/ProfilePremiumCell.java
+  org/telegram/ui/Components/ProfileActionsView.java
+  org/telegram/ui/Components/ProfileBalanceView.java
+  org/telegram/ui/Components/ProfileButtonsGlass.java
+  org/telegram/ui/Components/ProfileGalleryBlurView.java
+  org/telegram/ui/Components/ProfileGalleryView.java
+  org/telegram/ui/Components/ProfileGooeyView.java
+  org/telegram/ui/Components/ProfileMetaballView.java
+  org/telegram/ui/Components/ProfileMusicView.java
+  org/telegram/ui/Components/ProfileSuggestionView.java
+  org/telegram/ui/Components/SimpleThemeDescription.java
+  org/telegram/ui/Components/SwipeGestureSettingsView.java
+  org/telegram/ui/Components/ThemeEditorView.java
+  org/telegram/ui/Components/ThemePreviewDrawable.java
+  org/telegram/ui/Components/ThemeRevealView.java
+  org/telegram/ui/Components/ThemeSmallPreviewView.java
+  org/telegram/ui/Components/WallpaperCheckBoxView.java
+  org/telegram/ui/Components/WallpaperParallaxEffect.java
+  org/telegram/ui/Components/WallpaperUpdater.java
+  org/telegram/ui/Components/blur3/drawable/color/BlurredBackgroundColorProviderThemed.java
+  org/telegram/ui/Components/chat/WallpaperBitmapProvider.java
+  org/telegram/ui/DarkBlueThemeResourcesProvider.java
+  org/telegram/ui/DataSettingsActivity.java
+  org/telegram/ui/DebugSettingsActivity.java
+  org/telegram/ui/DefaultThemesPreviewCell.java
+  org/telegram/ui/GLIconSettingsView.java
+  org/telegram/ui/Gifts/ProfileGiftsContainer.java
+  org/telegram/ui/HeaderSettingsActivity.java
+  org/telegram/ui/LiteModeSettingsActivity.java
+  org/telegram/ui/NotificationsCustomSettingsActivity.java
+  org/telegram/ui/NotificationsSettingsActivity.java
+  org/telegram/ui/PeerColorActivity.java
+  org/telegram/ui/PrivacyControlActivity.java
+  org/telegram/ui/PrivacySettingsActivity.java
+  org/telegram/ui/PrivacyUsersActivity.java
+  org/telegram/ui/ProfileActivity.java
+  org/telegram/ui/ProfileActivity2.java
+  org/telegram/ui/ProfileBirthdayEffect.java
+  org/telegram/ui/ProfileNotificationsActivity.java
+  org/telegram/ui/ProfileStoriesCollectionTabs.java
+  org/telegram/ui/ProxySettingsActivity.java
+  org/telegram/ui/RoundVideoSettingsActivity.java
+  org/telegram/ui/SaveToGallerySettingsActivity.java
+  org/telegram/ui/SettingsActivity.java
+  org/telegram/ui/Stars/ProfileGiftsView.java
+  org/telegram/ui/Stories/DarkThemeResourceProvider.java
+  org/telegram/ui/Stories/ProfileStoriesView.java
+  org/telegram/ui/Stories/StoryPrivacyButton.java
+  org/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet.java
+  org/telegram/ui/Stories/recorder/StoryPrivacySelector.java
+  org/telegram/ui/Stories/recorder/StoryThemeSheet.java
+  org/telegram/ui/ThemeActivity.java
+  org/telegram/ui/ThemePreviewActivity.java
+  org/telegram/ui/ThemeSetUrlActivity.java
+  org/telegram/ui/TopicsNotifySettingsFragments.java
+  org/telegram/ui/Wallet/ProfileWalletCardDialog.java
+  org/telegram/ui/WallpapersListActivity.java
+  org/telegram/ui/bots/BotBiometrySettings.java
+  org/telegram/ui/bots/SetupEmojiStatusSheet.java
+  org/telegram/ui/web/WebBrowserSettings.java

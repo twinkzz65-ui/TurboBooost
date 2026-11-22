@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Адрес сервера на Render. Задаётся при сборке: переменная окружения SERVER_URL (в GitHub: Settings → Variables → SERVER_URL)
+def serverUrl = (System.getenv("SERVER_URL") ?: "https://vexis-e6d8.onrender.com").trim().replaceAll("/+\$", "")
+
+def runNumber = (System.getenv("GITHUB_RUN_NUMBER") ?: "1").trim()
+if (!runNumber.isInteger()) runNumber = "1"
+
+android {
+    namespace "app.vexis"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "app.vexis"
+        minSdk 24
+        targetSdk 34
+        versionCode = Integer.parseInt(runNumber)
+        versionName = "1.0." + runNumber
+        buildConfigField "String", "SERVER_URL", "\"${serverUrl}\""
+    }
+
+    buildFeatures { buildConfig true }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    signingConfigs {
+        // Постоянный ключ из репозитория: все сборки подписаны одним ключом, поэтому APK обновляется поверх старого
+        // без удаления (и вход/сессия сохраняются). Для публикации в Google Play сделайте свой ключ.
+        stable {
+            storeFile file("vexis.keystore")
+            storePassword "vexis123"
+            keyAlias "vexis"
+            keyPassword "vexis123"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.stable
+        }
+        debug {
+            signingConfig signingConfigs.stable
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

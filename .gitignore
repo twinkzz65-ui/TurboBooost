@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+vexis.db*
+.env
+bot_token.local
+panel.local.json
+android/app/src/main/assets/
+android/app/build/
+android/build/
+android/.gradle/

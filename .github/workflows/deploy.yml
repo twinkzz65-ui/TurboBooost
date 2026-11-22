@@ -1,0 +1,31 @@
+name: build-and-deploy
+on:
+  push:
+    branches: [main]
+    paths: ["server.py", "bot_token.py", "Dockerfile", "requirements.txt", "res/**", "gifts/**", ".github/workflows/deploy.yml"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Проверка синтаксиса
+        run: python -m py_compile server.py
+      - name: Сборка Docker-образа
+        run: docker build -t vexis .
+      - name: Запуск и проверка /ping
+        run: |
+          docker run -d --name vexis-test -p 8080:10000 -e PORT=10000 vexis
+          for i in $(seq 1 30); do curl -fs localhost:8080/ping && exit 0; sleep 2; done
+          docker logs vexis-test; exit 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Деплой на Render
+        run: curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"

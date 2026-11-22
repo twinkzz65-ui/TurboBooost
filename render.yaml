@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: vexis
+    runtime: docker
+    plan: free
+    autoDeploy: false          # деплой запускает GitHub Actions через Deploy Hook
+    healthCheckPath: /ping
+    envVars:
+      - key: BOT_TOKEN
+        sync: false            # вписать в панели Render
+      - key: ADMIN_KEY
+        sync: false            # ключ админ-панели (придумайте длинный)
+      - key: ADMIN_IDS
+        sync: false
+      - key: PUBLIC_URL
+        sync: false            # https://<имя>.onrender.com
+      - key: NO_TUNNEL
+        value: "1"
